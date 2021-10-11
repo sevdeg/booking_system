@@ -8,25 +8,25 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
+    "core-js": "^3.18.2",
     "popup-message": "0.0.7",
-    "vue": "^3.0.0",
+    "vue": "^3.2.20",
     "vue-router": "^4.0.0-0",
-    "vuestic-ui": "^1.2.8"
+    "vuestic-ui": "1.2.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.20",
     "@vue/eslint-config-standard": "^5.1.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0",
+    "eslint-plugin-vue": "^7.19.1",
     "vue-cli-plugin-vuestic-ui": "~1.0.1"
   }
 }
