@@ -15,44 +15,28 @@
             Show modal size large
           </va-button>
           <va-modal v-model="showModalSizeLarge" :message="message">
-            <div style="height: 13rem; border: 2px solid var(--va-primary); width:600px;">
-            <va-sidebar textColor="dark">
-              <va-sidebar-item>
-                <va-sidebar-item-content>
-                  <va-icon name="dashboard"/>
-                  <!-- User can hide item with css if he wants -->
-                  <va-sidebar-item-title> Velg behandling </va-sidebar-item-title>
-                </va-sidebar-item-content>
-              </va-sidebar-item>
-              <va-sidebar-item>
-                <va-sidebar-item-content>
-                  <va-icon name="room" />
-                  <va-sidebar-item-title> Velg klient </va-sidebar-item-title>
-                </va-sidebar-item-content>
-              </va-sidebar-item>
-               <va-sidebar-item>
-                <va-sidebar-item-content>
-                <va-icon name="dashboard"/>
-                  <!-- User can hide item with css if he wants -->
-                  <va-sidebar-item-title> Velg Dato og kl </va-sidebar-item-title>
-                </va-sidebar-item-content>
-              </va-sidebar-item>
-              <va-sidebar-item>
-                <va-sidebar-item-content>
-                <va-icon name="dashboard"/>
-                  <!-- User can hide item with css if he wants -->
-                  <va-sidebar-item-title> Skriv informasjon! </va-sidebar-item-title>
-                </va-sidebar-item-content>
-              </va-sidebar-item>
-              <va-sidebar-item>
-                <va-sidebar-item-content>
-                <va-icon name="dashboard"/>
-                  <!-- User can hide item with css if he wants -->
-                  <va-sidebar-item-title> Bekreft </va-sidebar-item-title>
-                </va-sidebar-item-content>
-              </va-sidebar-item>
-            </va-sidebar>
-          </div>
+            <!-- <div class="row">
+                <div class="col-xs-12 col-md-3">.col-xs-12 .col-md-3
+
+                </div>
+                <div class="col-xs-12 col-md-3">.col-xs-12 .col-md-3
+
+                </div>
+                <div class="col-xs-12 col-md-3">.col-xs-12 .col-md-3
+
+                </div>
+                <div class="col-xs-12 col-md-3">.col-xs-12 .col-md-3
+
+                </div>
+            </div> -->
+             <div class="row">
+                <div class="flex md6 lg4">
+                <va-card color="primary" gradient>
+                    <va-card-title>Title</va-card-title>
+                    <va-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit.</va-card-content>
+                </va-card>
+                </div>
+            </div>
           </va-modal>
           </p>
         </main>
