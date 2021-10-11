@@ -11,24 +11,23 @@
         </header>
         <main>
           <p>
-          <va-button @click="showModal = !showModal">
-            Book Time
+          <va-button class="mr-2 mb-2" @click="showModalSizeLarge = !showModalSizeLarge">
+            Show modal size large
           </va-button>
-          <va-modal v-model="showModal" :message="message" title="Overview" >
-            <div style="height: 13rem; border: 2px solid var(--va-primary);">
+          <va-modal v-model="showModalSizeLarge" :message="message" size="large">
+            <div style="height: 13rem; border: 2px solid var(--va-primary); width:900px;">
             <va-sidebar textColor="dark">
               <va-sidebar-item>
                 <va-sidebar-item-content>
-                  <va-icon name="dashboard" />
+                  <va-icon name="dashboard" @click="showSlide1"/>
                   <!-- User can hide item with css if he wants -->
-                  <va-sidebar-item-title> Dashboard </va-sidebar-item-title>
+                  <va-sidebar-item-title> Velg behandling </va-sidebar-item-title>
                 </va-sidebar-item-content>
               </va-sidebar-item>
-
               <va-sidebar-item active>
                 <va-sidebar-item-content>
                   <va-icon name="room" />
-                  <va-sidebar-item-title> Sidebar demo </va-sidebar-item-title>
+                  <va-sidebar-item-title> Velg klient </va-sidebar-item-title>
                 </va-sidebar-item-content>
               </va-sidebar-item>
             </va-sidebar>
@@ -45,7 +44,7 @@
 export default {
   data () {
     return {
-      showModal: false
+      showModalSizeLarge: false
     }
   }
 }
