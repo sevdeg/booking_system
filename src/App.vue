@@ -64,7 +64,7 @@ export default {
   }
 }
 </script>-->
-<style lang="scss">
+<!---<style lang="scss">
   @import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
   body {
     margin: 0;
@@ -77,4 +77,14 @@ export default {
     min-height: 100vh;
     overflow: hidden;
   }
-</style>
+</style>-->
+<!--<script>
+import Test from './components/Test.vue'
+export default {
+  name: 'App',
+  components: {
+    Test
+  }
+}
+</script>
+-->

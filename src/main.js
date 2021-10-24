@@ -1,3 +1,20 @@
+// import { createApp } from 'vue'
+// import App from './App.vue'
+// import router from './router'
+// import { VuesticPlugin } from 'vuestic-ui'
+// import 'vuestic-ui/dist/vuestic-ui.css'
+// const firebaseConfig = {
+//     apiKey: "AIzaSyB6xY5JQIcoxpCAq0wOHOgoSe4lxjsTNDU",
+//     authDomain: "bookingsystem-4b238.firebaseapp.com",
+//     projectId: "bookingsystem-4b238",
+//     storageBucket: "bookingsystem-4b238.appspot.com",
+//     messagingSenderId: "182840209652",
+//     appId: "1:182840209652:web:790157d45018175aa7aea1",
+//     measurementId: "G-DYFMNK12Q7"
+//   };
+//   // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+// createApp(App).use(router).use(VuesticPlugin).mount('#app')
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
