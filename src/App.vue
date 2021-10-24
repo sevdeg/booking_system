@@ -4,6 +4,9 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/test">Test</router-link>
   </div>
+  <div>
+    <Test/>
+  </div>
   <router-view/>
 </template>
 
@@ -88,3 +91,10 @@ export default {
 }
 </script>
 -->
+<script>
+import Test from './components/Test.vue'
+export default {
+  components:
+  Test
+}
+</script>

@@ -38,14 +38,16 @@
                     <!-- v-for="type in behandlingstyper" :key="type.id" -->
                     <va-list>
                       <va-list-label>
-                        Behandlingstype
+                        Velg dato
                       </va-list-label>
-
+                      <!--<va-date-picker v-model="value" style="margin:auto; width:400px;"/>-->
+                      <div id="ap">
+                        <Datepicker format="YYYY-MM-DD H:i:s" width="100%"/>
+                      </div>
                       <va-list-item
                         v-for="(Behandlingstype, index) in behandlingstyper" @click="getId(Behandlingstype.navn)" style="display:block"
                         :key="index"
                       >
-
                         <va-list-item-section>
                           <va-list-item-label>
                             {{ Behandlingstype.navn }}
@@ -86,13 +88,20 @@
 </template>
 <script>
 import { projectFirestore } from '../main'
+import Datepicker from 'vuejs-datetimepicker'
 export default {
+  name: 'App',
+  components: {
+    Datepicker
+  },
   data () {
     return {
       showModalSizeLarge: false,
       behandlingstyper: [],
       role: null,
-      getNavn: null
+      getNavn: null,
+      // value: new Date(),
+      value: ''
     }
   },
   // Legg til alle de i array med unshift, så bare skriv ut det i en kvittering
@@ -172,5 +181,13 @@ export default {
     }
     /* .flex md6 {
     } */
+}
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
