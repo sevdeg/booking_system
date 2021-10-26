@@ -74,8 +74,96 @@
               </va-list-item-section> -->
             </va-list-item>
           </va-list>
+          <!-- <va-date-picker
+            stateful
+            v-model='date'
+            :allowedDate="new Date()"
+            :min-date='new Date()'
+            type="day"
+          /> -->
         </div>
       </div>
+      <!-- STEP 3 -->
+      <div class="flex md8" v-if="step3">
+        <va-list-label>
+            Velg dato og tid
+        </va-list-label>
+        <!-- <div class="item">
+          <va-date-picker v-model="value3" @click="getDato(value3)" style="margin:auto"/>
+        </div> -->
+        <v-row justify="center">
+          <v-date-picker
+            v-model="date"
+            :allowed-dates="allowedDates"
+            class="mt-4"
+            min="2016-06-15"
+            max="2018-03-20"
+          ></v-date-picker>
+        </v-row>
+        <!-- ---------------------------------------------------------------SEVDEEEEE -->
+      </div>
+      <!-- STEP 4 -->
+      <div class="flex md8" v-if="step4">
+        <va-list-label>
+            Ordreinfo
+        </va-list-label>
+        <div class="item">
+          <table class="va-table">
+            <thead>
+            <tr>
+              <th>Time info</th>
+            </tr>
+            </thead>
+            <tr>
+              <td><strong>Dato: </strong> {{ value3 }}</td>
+              <td> Tid </td>
+            </tr>
+            <tr>
+              <td><strong>Klient:</strong> {{ value2 }}</td>
+              <td><strong>Behandling</strong> {{ value }}</td>
+            </tr>
+            <thead>
+            <tr>
+              <th>Kunde info</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Navn</td>
+                <td>Telefon</td>
+                <td>
+                  <!-- <va-badge
+                    :text="user.status"
+                    :color="user.status"
+                  /> -->
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>
+                  <!-- <va-badge
+                    :text="user.status"
+                    :color="user.status"
+                  /> -->
+                </td>
+              </tr>
+              <thead>
+            <tr>
+              <th>Betalings info</th>
+              <!-- <th>Email</th>
+              <th>Country</th>
+              <th>Status</th> -->
+            </tr>
+            </thead>
+            <tr>
+                <td>Totalpris</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- ---------------------------------------------------------------SEVDEEEEE -->
+      </div>
+      <!-- <button style="display:none">gå videre</button> -->
     <!-- <form @submit.prevent="addMessage">
       <select v-model="value">
         <option value="developer">web developer</option>
@@ -83,8 +171,10 @@
       </select>
       <button>Order</button>
     </form> -->
-    <p>Step1: {{ value }}</p>
+    <!-- VIKTIG info om kvittering -->
+    <!-- <p>Step1: {{ value }}</p>
     <p>Step2: {{ value2 }}</p>
+    <p>Step3: {{ value3 }}</p> -->
     </Modal>
   <!-- </div> -->
   <!-- <button @click="toggleModal">, InfoOp, Infoen Modal</button> -->
@@ -99,21 +189,24 @@ export default ({
   components: { Modal, behandlingsInfo },
   data () {
     return {
-      contacts: [
-        { name: 'Audrey Clay', address: '644 Vermont Court, Freelandville, Kentucky, 2619', img: 'https://randomuser.me/api/portraits/women/5.jpg' },
-        { name: 'Aguirre Klein', address: '626 Carroll Street, Roulette, Ohio, 1477', img: 'https://randomuser.me/api/portraits/men/1.jpg' },
-        { name: 'Tucker Kaufman', address: '887 Winthrop Street, Tryon, Florida, 3912', img: 'https://randomuser.me/api/portraits/men/3.jpg' },
-        { name: 'Herbert Keller', address: '286 NW. Shore St.Longwood, FL 32779', img: 'https://randomuser.me/api/portraits/men/5.jpg' }
-      ],
+      show: false,
+      // contacts: [
+      //   { name: 'Audrey Clay', address: '644 Vermont Court, Freelandville, Kentucky, 2619', img: 'https://randomuser.me/api/portraits/women/5.jpg' },
+      //   { name: 'Aguirre Klein', address: '626 Carroll Street, Roulette, Ohio, 1477', img: 'https://randomuser.me/api/portraits/men/1.jpg' },
+      //   { name: 'Tucker Kaufman', address: '887 Winthrop Street, Tryon, Florida, 3912', img: 'https://randomuser.me/api/portraits/men/3.jpg' },
+      //   { name: 'Herbert Keller', address: '286 NW. Shore St.Longwood, FL 32779', img: 'https://randomuser.me/api/portraits/men/5.jpg' }
+      // ],
       showModalSizeLarge: true,
       step1: true,
       step2: false,
+      step3: false,
+      step4: false,
       // showContent: true,
-      title: 'My first vue app',
       behandlingstyper: [],
       klienter: [],
       value: null,
       value2: null,
+      value3: new Date(),
       getNavn: null
       // showModalSizeLarge: true
       // showModal: false
@@ -129,11 +222,34 @@ export default ({
       // this.fetchKlienter()
       this.step2 = true
     },
+    // Get current time
+    // currentDate () {
+    //   const current = new Date()
+    //   const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`
+    //   console.log(date)
+    //   return date
+    // },
     getKlientNavn (klientNavn) {
       console.log('klikket på klient navn funk')
       this.value2 = klientNavn
       console.log(this.value2)
+      this.step1 = false
+      this.step2 = false
+      this.step3 = true
     },
+    getDato (value3) {
+      console.log(value3)
+      value3 = this.value3
+      console.log(value3)
+      this.step1 = false
+      this.step2 = false
+      this.step3 = false
+      this.step4 = true
+      this.addMessage()
+    },
+    // showButton (value3) {
+    //   console.log('clikced')
+    // },
     // showModalSizeLargeer () {
     //   console.log('kliker på modal')
     //   this.fetchBehandlingstyper()
@@ -153,16 +269,20 @@ export default ({
     // FUNGERER FOR Å ADDE I DATABASE
     addMessage () {
       console.log('inne i add message')
-      if (this.role) {
-        this.feedback = null
+      if (this.value && this.value2 && this.value3) {
+        // this.feedback = null
         projectFirestore.collection('ordre').add({
-          role: this.role
+          type: this.value,
+          navn: this.value2,
+          dato: this.value3
           // to: this.$route.params.id,
           // from: this.authUser.email,
           // description: this.message,
           // createdAt: new Date(),
         }).then(() => {
-          this.role = null
+          // this.value = null
+          // this.value2 = null
+          // this.value3 = null
         })
       } else {
         console.log('feil')
@@ -242,5 +362,22 @@ export default ({
   }
 .va-list-item:hover {
   background-color: lightblue;
+}
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
